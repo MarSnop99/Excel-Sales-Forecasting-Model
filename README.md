@@ -9,7 +9,7 @@ Celem tego projektu było przeprowadzenie kompleksowej analizy porównawczej dw�
 *   **Optymalizacja:** Minimalizacja błędu MAPE przy użyciu algorytmu GRG Nieliniowy w dodatku Solver dla każdego z czterech zbudowanych modeli (trzy dla kategorii, jeden zagregowany).
 *   **Metodologia Porównawcza:** Skrupulatne zbudowanie i optymalizacja obu modeli, a następnie porównanie ich ostatecznej precyzji na tym samym, oczyszczonym okresie testowym.
 
-## 💡 Kluczowe Odkrycie i Rekomendacja Biznesowa
+## Kluczowe Odkrycie i Rekomendacja Biznesowa
 Wbrew początkowej hipotezie, że bardziej złożony, hierarchiczny model Bottom-Up okaże się dokładniejszy, dogłębna analiza wykazała, że **oba podejścia, po precyzyjnej optymalizacji, zbiegły się do identycznego, najwyższego możliwego poziomu dokładności, osiągając błąd MAPE na poziomie 43%**.
 
 **Rekomendacja Biznesowa:** W związku z faktem, że bardziej złożony i zasobożerny model Bottom-Up nie oferuje żadnej przewagi w precyzji nad prostszym modelem Top-Down, **rekomendacja biznesowa jest jednoznaczna: należy wdrożyć model Top-Down.** Pozwoli to osiągnąć ten sam, optymalny rezultat przy znacznie niższym nakładzie czasu i zasobów na jego budowę, utrzymanie i ewentualne modyfikacje. Odkrycie to podkreśla, że celem analizy jest znalezienie najefektywniejszej drogi do najlepszego wyniku.
