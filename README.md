@@ -1,24 +1,27 @@
-#  Zaawansowany Model Prognostyczny w Excelu: Porównanie Metod Top-Down vs. Bottom-Up
+#  Zaawansowane Prognozowanie Popytu (Excel + Solver)
 
-## Cel Projektu
-Celem tego projektu było przeprowadzenie kompleksowej analizy porównawczej dwóch popularnych metod prognozowania szeregów czasowych – zagregowanej (Top-Down) i hierarchicznej (Bottom-Up) – w celu znalezienia najdokładniejszego i najefektywniejszego modelu dla danych sprzedażowych firmy "Superstore".
+### [Pobierz Model Excel (.xlsx)](Superstore Analysis.xlsx)
 
-##  Użyte Narzędzia i Metodologia
-*   **Narzędzia:** Microsoft Excel, Power Query, Dodatek Solver
-*   **Model Statystyczny:** Potrójne Wygładzanie Wykładnicze (Metoda Holta-Wintersa)
-*   **Optymalizacja:** Minimalizacja błędu MAPE przy użyciu algorytmu GRG Nieliniowy w dodatku Solver dla każdego z czterech zbudowanych modeli (trzy dla kategorii, jeden zagregowany).
-*   **Metodologia Porównawcza:** Skrupulatne zbudowanie i optymalizacja obu modeli, a następnie porównanie ich ostatecznej precyzji na tym samym, oczyszczonym okresie testowym.
+Projekt analityczny porównujący skuteczność dwóch strategii prognozowania sprzedaży: **Top-Down** (ogół do szczegółu) vs **Bottom-Up** (szczegół do ogółu).
+Celem było wyłonienie metody optymalnej kosztowo i jakościowo dla sieci handlowej "Superstore".
 
-## Kluczowe Odkrycie i Rekomendacja Biznesowa
-Wbrew początkowej hipotezie, że bardziej złożony, hierarchiczny model Bottom-Up okaże się dokładniejszy, dogłębna analiza wykazała, że **oba podejścia, po precyzyjnej optymalizacji, zbiegły się do identycznego, najwyższego możliwego poziomu dokładności, osiągając błąd MAPE na poziomie 43%**.
 
-**Rekomendacja Biznesowa:** W związku z faktem, że bardziej złożony i zasobożerny model Bottom-Up nie oferuje żadnej przewagi w precyzji nad prostszym modelem Top-Down, **rekomendacja biznesowa jest jednoznaczna: należy wdrożyć model Top-Down.** Pozwoli to osiągnąć ten sam, optymalny rezultat przy znacznie niższym nakładzie czasu i zasobów na jego budowę, utrzymanie i ewentualne modyfikacje. Odkrycie to podkreśla, że celem analizy jest znalezienie najefektywniejszej drogi do najlepszego wyniku.
+##  Problem Biznesowy
+Firma potrzebowała wiarygodnej prognozy sprzedaży, aby zoptymalizować stany magazynowe.
+Pytanie badawcze: *Czy warto inwestować czas w budowę skomplikowanych modeli dla każdej kategorii osobno (Bottom-Up), czy wystarczy jeden model zagregowany (Top-Down)?*
 
-##  Przegląd Pliku
-Plik `Superstore Analysis.xlsx` w tym repozytorium zawiera kompletny, interaktywny model z następującymi arkuszami:
-*   **README:** Strona startowa z nawigacją i opisem projektu.
-*   **Conclusion & Comparison:** Główny arkusz wynikowy z finalnym porównaniem obu metod, wnioskami i wizualizacjami.
-*   **Forecast_TopDown & Forecast_[Kategorie]:** Cztery arkusze zawierające w pełni działające, zoptymalizowane modele prognostyczne.
-*   **Aggregated_Data:** Czyste dane źródłowe przygotowane za pomocą Power Query.
+##  Metodologia i Narzędzia
+*   **Silnik:** Excel (Holt-Winters Triple Exponential Smoothing).
+*   **ETL:** Power Query (czyszczenie i agregacja surowych danych transakcyjnych).
+*   **Optymalizacja:** **Excel Solver (GRG Nonlinear)** – automatyczne dobieranie parametrów Alfa, Beta, Gamma w celu minimalizacji błędu.
+*   **Metryka sukcesu:** MAPE (Mean Absolute Percentage Error).
 
-*Możesz pobrać plik, aby samodzielnie przetestować działanie modelu i Solvera.*
+##  Kluczowe Wnioski (Business Insights)
+1.  **Efektywność Kosztowa:** Analiza wykazała, że złożony model Bottom-Up (sumujący prognozy z 3 kategorii) **nie przyniósł przewagi w dokładności** nad prostszym modelem Top-Down (błąd MAPE dla obu wyniósł ok. 43%).
+2.  **Rekomendacja:** Zalecane wdrożenie metody **Top-Down**. Pozwala ona osiągnąć ten sam wynik przy **3-krotnie niższym nakładzie pracy** analityka i mniejszym ryzyku błędu operacyjnego.
+3.  **Wnioski dla IT:** Mniejsza złożoność modelu oznacza łatwiejsze utrzymanie i szybsze przeliczanie raportów.
+
+##  Struktura Pliku
+*   `Conclusion & Comparison` - Dashboard menedżerski z porównaniem metod.
+*   `Forecast_TopDown` - Główny model zagregowany (zoptymalizowany Solverem).
+*   `Aggregated_Data` - Dane po procesie ETL w Power Query.
