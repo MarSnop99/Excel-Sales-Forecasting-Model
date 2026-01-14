@@ -1,7 +1,5 @@
 # Advanced Demand Forecasting (Excel + Solver)
 
-### [Download Excel Model (.xlsx)](Superstore Analysis.xlsx)
-
 An analytical project comparing the effectiveness of two sales forecasting strategies: **Top-Down** vs. **Bottom-Up**.
 The goal was to determine the most cost-effective and accurate method for the "Superstore" retail chain.
 
